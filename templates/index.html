@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Video Trimmer</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Video Trimmer</h1>
+        <form method="post" action="/">
+            <label for="video_url">YouTube Video URL:</label>
+            <input type="text" name="video_url" required>
+            <br>
+            <label for="start_time">Start Time (seconds):</label>
+            <input type="number" name="start_time" required>
+            <br>
+            <label for="end_time">End Time (seconds):</label>
+            <input type="number" name="end_time" required>
+            <br>
+            <label for="text">Tweet Text:</label>
+            <input type="text" name="text" required>
+            <br>
+            <button type="submit">Trim and Tweet</button>
+        </form>
+        {% if tweeted %}
+            <p>Video trimmed and tweeted successfully!</p>
+        {% endif %}
+    </div>
+</body>
+</html>
