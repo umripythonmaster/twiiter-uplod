@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "builds": [
+    "buildCommand": [
         {
             "src": "src/index.py",
             "use": "@vercel/python"
